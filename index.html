@@ -3,105 +3,82 @@
 <head>
   <meta charset="UTF-8" />
   <title>Patrones de Diseño en Java</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      margin: 0;
-      font-family: 'Roboto Slab', serif;
-      background: linear-gradient(to right, #000000, #001a33);
-      color: #f0f0f0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f7faff;
+      color: #1e293b;
     }
-
     header {
-      text-align: center;
-      padding: 40px 20px;
-      background: radial-gradient(circle at top, #003366, #000000);
-      box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
-    }
-
-    header h1 {
-      font-size: 2.8em;
-      margin: 0;
-      color: #00ccff;
-      text-shadow: 2px 2px 10px #000000;
-    }
-
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-      padding: 30px 20px;
-    }
-
-    .menu {
-      position: relative;
-    }
-
-    .menu button {
-      background: linear-gradient(145deg, #004080, #002244);
+      background-color: #2563eb;
       color: white;
-      padding: 12px 30px;
-      font-size: 1.1em;
-      border: none;
-      border-radius: 12px;
-      cursor: pointer;
-      transition: background 0.3s, transform 0.2s;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
     }
-
-    .menu button:hover {
-      background: #0059b3;
-      transform: translateY(-2px);
+    header h1 { font-size: 2rem; margin-bottom: 5px; }
+    header p { font-size: 1rem; opacity: 0.9; }
+    .stats {
+      display: flex; justify-content: center;
+      gap: 20px; flex-wrap: wrap; margin: 20px 0;
     }
-
-    .dropdown {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      margin-top: 10px;
-      background: #001a33;
+    .stat {
+      background-color: white;
+      border-left: 5px solid #2563eb;
       border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0px 4px 12px rgba(0,0,0,0.6);
-      min-width: 240px;
-      z-index: 10;
+      padding: 20px; min-width: 150px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      text-align: center;
     }
-
-    .dropdown a {
-      display: block;
-      padding: 12px 18px;
+    .stat h2 { font-size: 2rem; margin-bottom: 5px; }
+    .section-title {
+      text-align: center;
+      margin: 30px 0 10px;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      padding: 0 30px 40px;
+    }
+    .card {
+      background-color: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .card-icon { font-size: 2rem; margin-bottom: 10px; }
+    .card h3 { margin-bottom: 10px; }
+    .card span {
+      font-size: 0.8rem;
+      color: #2563eb;
+      background-color: #e0f2fe;
+      padding: 4px 8px;
+      border-radius: 9999px;
+      margin-bottom: 10px;
+    }
+    .card a {
       text-decoration: none;
-      color: #ffffff;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-      transition: background 0.2s;
+      color: #2563eb;
+      font-weight: bold;
+      border: 1px solid #2563eb;
+      border-radius: 5px;
+      padding: 5px 10px;
+      transition: 0.3s;
     }
-
-    .dropdown a:hover {
-      background: #003d66;
-    }
-
-    .dropdown.active {
-      display: block;
-    }
-
+    .card a:hover { background-color: #2563eb; color: white; }
     footer {
       text-align: center;
       padding: 20px;
-      color: #999;
-      font-size: 0.9em;
-      margin-top: 40px;
-    }
-
-    @media (max-width: 600px) {
-      nav {
-        flex-direction: column;
-        align-items: center;
-      }
+      font-size: 0.9rem;
+      color: #64748b;
     }
   </style>
 </head>
@@ -109,87 +86,72 @@
 
 <header>
   <h1>💡 Patrones de Diseño en Java</h1>
+  <p>Guía completa de patrones de diseño</p>
 </header>
 
-<nav>
-  <!-- Creacionales -->
-  <div class="menu">
-    <button onclick="toggleDropdown('creacionales')">🛠️ Creacionales</button>
-    <div class="dropdown" id="creacionales">
-      <a href="ejercicios/Creacionales/Factory.zip" download>🏗️ Factory</a>
-      <a href="ejercicios/Creacionales/AbstractFactory.zip" download>🏢 Abstract Factory</a>
-      <a href="ejercicios/Creacionales/Builder.zip" download>🧱 Builder</a>
-      <a href="ejercicios/Creacionales/Singleton.zip" download>🔒 Singleton</a>
-      <a href="ejercicios/Creacionales/Prototype.zip" download>🧬 Prototype</a>
-    </div>
-  </div>
+<section class="stats">
+  <div class="stat"><h2>5</h2><p>Creacionales</p></div>
+  <div class="stat"><h2>7</h2><p>Estructurales</p></div>
+  <div class="stat"><h2>10</h2><p>Comportamiento</p></div>
+  <div class="stat"><h2>3</h2><p>Concurrencia</p></div>
+</section>
 
-  <!-- Estructurales -->
-  <div class="menu">
-    <button onclick="toggleDropdown('estructurales')">🏛️ Estructurales</button>
-    <div class="dropdown" id="estructurales">
-      <a href="ejercicios/Estructurales/Adapter.zip" download>🔌 Adapter</a>
-      <a href="ejercicios/Estructurales/Bridge.zip" download>🌉 Bridge</a>
-      <a href="ejercicios/Estructurales/Composite.zip" download>🌲 Composite</a>
-      <a href="ejercicios/Estructurales/Decorator.zip" download>🎁 Decorator</a>
-      <a href="ejercicios/Estructurales/Facade.zip" download>🚪 Facade</a>
-      <a href="ejercicios/Estructurales/Flyweight.zip" download>🪶 Flyweight</a>
-      <a href="ejercicios/Estructurales/Proxy.zip" download>🧿 Proxy</a>
-    </div>
+<!-- CREACIONALES -->
+<section>
+  <h2 class="section-title">🔧 Creacionales</h2>
+  <div class="cards">
+    <div class="card"><div class="card-icon">🏗️</div><h3>Factory</h3><span>Creacional</span><a href="ejercicios/Creacionales/Factory.zip" download>Ver detalles</a></div>
+    <div class="card"><div class="card-icon">🏢</div><h3>Abstract Factory</h3><span>Creacional</span><a href="ejercicios/Creacionales/AbstractFactory.zip" download>Ver detalles</a></div>
+    <div class="card"><div class="card-icon">🧱</div><h3>Builder</h3><span>Creacional</span><a href="ejercicios/Creacionales/Builder.zip" download>Ver detalles</a></div>
+    <div class="card"><div class="card-icon">🔒</div><h3>Singleton</h3><span>Creacional</span><a href="ejercicios/Creacionales/Singleton.zip" download>Ver detalles</a></div>
+    <div class="card"><div class="card-icon">🧬</div><h3>Prototype</h3><span>Creacional</span><a href="ejercicios/Creacionales/Prototype.zip" download>Ver detalles</a></div>
   </div>
+</section>
 
-  <!-- Comportamiento -->
-  <div class="menu">
-    <button onclick="toggleDropdown('comportamiento')">🧠 Comportamiento</button>
-    <div class="dropdown" id="comportamiento">
-      <a href="ejercicios/Comportamiento/ChainofResponsibility.zip" download>🔗 Chain of Responsibility</a>
-      <a href="ejercicios/Comportamiento/Command.zip" download>🎮 Command</a>
-      <a href="ejercicios/Comportamiento/Iterator.zip" download>🔁 Iterator</a>
-      <a href="ejercicios/Comportamiento/Mediator.zip" download>🗣️ Mediator</a>
-      <a href="ejercicios/Comportamiento/Memento.zip" download>🧠 Memento</a>
-      <a href="ejercicios/Comportamiento/Observer.zip" download>👀 Observer</a>
-      <a href="ejercicios/Comportamiento/State.zip" download>🎚️ State</a>
-      <a href="ejercicios/Comportamiento/Strategy.zip" download>♟️ Strategy</a>
-      <a href="ejercicios/Comportamiento/TemplateMethod.zip" download>📋 Template Method</a>
-      <a href="ejercicios/Comportamiento/Visitor.zip" download>🧳 Visitor</a>
-    </div>
+<!-- ESTRUCTURALES -->
+<section>
+  <h2 class="section-title">🏛️ Estructurales</h2>
+  <div class="cards">
+    <div class="card"><div class="card-icon">🔌</div><h3>Adapter</h3><span>Estructural</span><a href="ejercicios/Estructurales/Adapter.zip" download>Ver detalles</a></div>
+    <div class="card"><div class="card-icon">🌉</div><h3>Bridge</h3><span>Estructural</span><a href="ejercicios/Estructurales/Bridge.zip" download>Ver detalles</a></div>
+    <div class="card"><div class="card-icon">🌲</div><h3>Composite</h3><span>Estructural</span><a href="ejercicios/Estructurales/Composite.zip" download>Ver detalles</a></div>
+    <div class="card"><div class="card-icon">🎁</div><h3>Decorator</h3><span>Estructural</span><a href="ejercicios/Estructurales/Decorator.zip" download>Ver detalles</a></div>
+    <div class="card"><div class="card-icon">🚪</div><h3>Facade</h3><span>Estructural</span><a href="ejercicios/Estructurales/Facade.zip" download>Ver detalles</a></div>
+    <div class="card"><div class="card-icon">🪶</div><h3>Flyweight</h3><span>Estructural</span><a href="ejercicios/Estructurales/Flyweight.zip" download>Ver detalles</a></div>
+    <div class="card"><div class="card-icon">🧿</div><h3>Proxy</h3><span>Estructural</span><a href="ejercicios/Estructurales/Proxy.zip" download>Ver detalles</a></div>
   </div>
+</section>
 
-  <!-- Concurrencia -->
-  <div class="menu">
-    <button onclick="toggleDropdown('concurrencia')">⚙️ Concurrencia</button>
-    <div class="dropdown" id="concurrencia">
-      <a href="ejercicios/Concurrencia/GuardedSuspension.zip" download>🛡️ Guarded Suspension</a>
-      <a href="ejercicios/Concurrencia/LockOrder.zip" download>🔐 Lock Order</a>
-      <a href="ejercicios/Concurrencia/SeccionCritica.zip" download>🚦 Sección Crítica</a>
-    </div>
+<!-- COMPORTAMIENTO -->
+<section>
+  <h2 class="section-title">🧠 Comportamiento</h2>
+  <div class="cards">
+    <div class="card"><div class="card-icon">🔗</div><h3>Chain of Responsibility</h3><span>Comportamiento</span><a href="ejercicios/Comportamiento/ChainofResponsibility.zip" download>Ver detalles</a></div>
+    <div class="card"><div class="card-icon">🎮</div><h3>Command</h3><span>Comportamiento</span><a href="ejercicios/Comportamiento/Command.zip" download>Ver detalles</a></div>
+    <div class="card"><div class="card-icon">🔁</div><h3>Iterator</h3><span>Comportamiento</span><a href="ejercicios/Comportamiento/Iterator.zip" download>Ver detalles</a></div>
+    <div class="card"><div class="card-icon">🗣️</div><h3>Mediator</h3><span>Comportamiento</span><a href="ejercicios/Comportamiento/Mediator.zip" download>Ver detalles</a></div>
+    <div class="card"><div class="card-icon">🧠</div><h3>Memento</h3><span>Comportamiento</span><a href="ejercicios/Comportamiento/Memento.zip" download>Ver detalles</a></div>
+    <div class="card"><div class="card-icon">👀</div><h3>Observer</h3><span>Comportamiento</span><a href="ejercicios/Comportamiento/Observer.zip" download>Ver detalles</a></div>
+    <div class="card"><div class="card-icon">🎚️</div><h3>State</h3><span>Comportamiento</span><a href="ejercicios/Comportamiento/State.zip" download>Ver detalles</a></div>
+    <div class="card"><div class="card-icon">♟️</div><h3>Strategy</h3><span>Comportamiento</span><a href="ejercicios/Comportamiento/Strategy.zip" download>Ver detalles</a></div>
+    <div class="card"><div class="card-icon">📋</div><h3>Template Method</h3><span>Comportamiento</span><a href="ejercicios/Comportamiento/TemplateMethod.zip" download>Ver detalles</a></div>
+    <div class="card"><div class="card-icon">🧳</div><h3>Visitor</h3><span>Comportamiento</span><a href="ejercicios/Comportamiento/Visitor.zip" download>Ver detalles</a></div>
   </div>
-</nav>
+</section>
+
+<!-- CONCURRENCIA -->
+<section>
+  <h2 class="section-title">⚙️ Concurrencia</h2>
+  <div class="cards">
+    <div class="card"><div class="card-icon">🛡️</div><h3>Guarded Suspension</h3><span>Concurrencia</span><a href="ejercicios/Concurrencia/GuardedSuspension.zip" download>Ver detalles</a></div>
+    <div class="card"><div class="card-icon">🔐</div><h3>Lock Order</h3><span>Concurrencia</span><a href="ejercicios/Concurrencia/LockOrder.zip" download>Ver detalles</a></div>
+    <div class="card"><div class="card-icon">🚦</div><h3>Sección Crítica</h3><span>Concurrencia</span><a href="ejercicios/Concurrencia/SeccionCritica.zip" download>Ver detalles</a></div>
+  </div>
+</section>
 
 <footer>
-  Desarrollado por Tomas Arévalo Montes - 20232020267 – Ingeniería de Sistemas © 2025
+  Proyecto Académico – Desarrollado por Tomás Arévalo Montes – 20232020267 – Ingeniería de Sistemas © 2025
 </footer>
-
-<script>
-  function toggleDropdown(id) {
-    // Oculta todos los menús
-    const dropdowns = document.querySelectorAll('.dropdown');
-    dropdowns.forEach(drop => {
-      if (drop.id !== id) drop.classList.remove('active');
-    });
-
-    // Activa o desactiva el menú seleccionado
-    const selected = document.getElementById(id);
-    selected.classList.toggle('active');
-  }
-
-  // Opcional: cerrar si se hace clic fuera del menú
-  document.addEventListener('click', function (e) {
-    if (!e.target.closest('.menu')) {
-      document.querySelectorAll('.dropdown').forEach(drop => drop.classList.remove('active'));
-    }
-  });
-</script>
 
 </body>
 </html>
