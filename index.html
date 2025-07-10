@@ -2,28 +2,40 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Patrones de diseño en Java</title>
+    <title>Patrones de Diseño en Java</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap" rel="stylesheet">
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             margin: 0;
-            font-family: 'Segoe UI', sans-serif;
-            background: linear-gradient(135deg, #000000, #001f4d);
-            color: white;
+            font-family: 'Roboto Slab', serif;
+            background: linear-gradient(to right, #000000, #001a33);
+            color: #f0f0f0;
         }
 
         header {
             text-align: center;
-            padding: 20px;
-            background-color: rgba(0, 0, 64, 0.8);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            padding: 40px 20px;
+            background: radial-gradient(circle at top, #003366, #000000);
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+        }
+
+        header h1 {
+            font-size: 2.8em;
+            margin: 0;
+            color: #00ccff;
+            text-shadow: 2px 2px 10px #000000;
         }
 
         nav {
             display: flex;
-            justify-content: center;
             flex-wrap: wrap;
-            gap: 20px;
-            padding: 20px;
+            justify-content: center;
+            gap: 30px;
+            padding: 30px 20px;
         }
 
         .menu {
@@ -31,31 +43,33 @@
         }
 
         .menu button {
-            background-color: #003366;
+            background: linear-gradient(145deg, #004080, #002244);
             color: white;
+            padding: 12px 30px;
+            font-size: 1.1em;
             border: none;
-            padding: 10px 20px;
+            border-radius: 12px;
             cursor: pointer;
-            font-size: 16px;
-            border-radius: 8px;
-            transition: background-color 0.3s;
+            transition: background 0.3s, transform 0.2s;
         }
 
         .menu button:hover {
-            background-color: #0055cc;
+            background: #0059b3;
+            transform: translateY(-2px);
         }
 
         .dropdown {
             display: none;
             position: absolute;
-            background-color: #001a33;
-            box-shadow: 0px 4px 8px rgba(0,0,0,0.4);
-            border-radius: 8px;
-            padding: 10px;
-            z-index: 1;
             top: 100%;
             left: 0;
-            min-width: 220px;
+            margin-top: 10px;
+            background: #001a33;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0px 4px 12px rgba(0,0,0,0.6);
+            min-width: 240px;
+            z-index: 10;
         }
 
         .menu:hover .dropdown {
@@ -64,78 +78,97 @@
 
         .dropdown a {
             display: block;
-            color: white;
-            padding: 8px;
+            padding: 12px 18px;
             text-decoration: none;
-            border-radius: 6px;
-            transition: background-color 0.2s;
+            color: #ffffff;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            transition: background 0.2s;
         }
 
         .dropdown a:hover {
-            background-color: #004080;
+            background: #003d66;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #999;
+            font-size: 0.9em;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 600px) {
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
         }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>Patrones de diseño en Java</h1>
+    <h1>💡 Patrones de Diseño en Java</h1>
 </header>
 
 <nav>
     <!-- Creacionales -->
     <div class="menu">
-        <button>Creacionales</button>
+        <button>🛠️ Creacionales</button>
         <div class="dropdown">
-            <a href="ejercicios/Creacionales/Factory.zip" download>Ejercicios Factory</a>
-            <a href="ejercicios/Creacionales/AbstractFactory.zip" download>Abstract Factory</a>
-            <a href="ejercicios/Creacionales/Builder.zip" download>Ejercicios Builder</a>
-            <a href="ejercicios/Creacionales/Singleton.zip" download>Ejercicios Singleton</a>
-            <a href="ejercicios/Creacionales/Prototype.zip" download>Ejercicios Prototype</a>
+            <a href="ejercicios/Creacionales/Factory.zip" download>🏗️ Factory</a>
+            <a href="ejercicios/Creacionales/AbstractFactory.zip" download>🏢 Abstract Factory</a>
+            <a href="ejercicios/Creacionales/Builder.zip" download>🧱 Builder</a>
+            <a href="ejercicios/Creacionales/Singleton.zip" download>🔒 Singleton</a>
+            <a href="ejercicios/Creacionales/Prototype.zip" download>🧬 Prototype</a>
         </div>
     </div>
 
     <!-- Estructurales -->
     <div class="menu">
-        <button>Estructurales</button>
+        <button>🏛️ Estructurales</button>
         <div class="dropdown">
-            <a href="ejercicios/Estructurales/Adapter.zip" download>Ejercicios Adapter</a>
-            <a href="ejercicios/Estructurales/Bridge.zip" download>Ejercicios Bridge</a>
-            <a href="ejercicios/Estructurales/Composite.zip" download>Ejercicios Composite</a>
-            <a href="ejercicios/Estructurales/Decorator.zip" download>Ejercicios Decorator</a>
-            <a href="ejercicios/Estructurales/Facade.zip" download>Ejercicios Facade</a>
-            <a href="ejercicios/Estructurales/Flyweight.zip" download>Ejercicios Flyweight</a>
-            <a href="ejercicios/Estructurales/Proxy.zip" download>Ejercicios Proxy</a>
+            <a href="ejercicios/Estructurales/Adapter.zip" download>🔌 Adapter</a>
+            <a href="ejercicios/Estructurales/Bridge.zip" download>🌉 Bridge</a>
+            <a href="ejercicios/Estructurales/Composite.zip" download>🌲 Composite</a>
+            <a href="ejercicios/Estructurales/Decorator.zip" download>🎁 Decorator</a>
+            <a href="ejercicios/Estructurales/Facade.zip" download>🚪 Facade</a>
+            <a href="ejercicios/Estructurales/Flyweight.zip" download>🪶 Flyweight</a>
+            <a href="ejercicios/Estructurales/Proxy.zip" download>🧿 Proxy</a>
         </div>
     </div>
 
     <!-- Comportamiento -->
     <div class="menu">
-        <button>Comportamiento</button>
+        <button>🧠 Comportamiento</button>
         <div class="dropdown">
-            <a href="ejercicios/Comportamiento/ChainofResponsibility.zip" download>Ejercicios Chain of Responsibility</a>
-            <a href="ejercicios/Comportamiento/Command.zip" download>Ejercicios Command</a>
-            <a href="ejercicios/Comportamiento/Iterator.zip" download>Ejercicios Iterator</a>
-            <a href="ejercicios/Comportamiento/Mediator.zip" download>Ejercicios Mediator</a>
-            <a href="ejercicios/Comportamiento/Memento.zip" download>Ejercicios Memento</a>
-            <a href="ejercicios/Comportamiento/Observer.zip" download>Ejercicios Observer</a>
-            <a href="ejercicios/Comportamiento/State.zip" download>Ejercicios State</a>
-            <a href="ejercicios/Comportamiento/Strategy.zip" download>Ejercicios Strategy</a>
-            <a href="ejercicios/Comportamiento/TemplateMethod.zip" download>Ejercicios Template Method</a>
-            <a href="ejercicios/Comportamiento/Visitor.zip" download>Ejercicios Visitor</a>
+            <a href="ejercicios/Comportamiento/ChainofResponsibility.zip" download>🔗 Chain of Responsibility</a>
+            <a href="ejercicios/Comportamiento/Command.zip" download>🎮 Command</a>
+            <a href="ejercicios/Comportamiento/Iterator.zip" download>🔁 Iterator</a>
+            <a href="ejercicios/Comportamiento/Mediator.zip" download>🗣️ Mediator</a>
+            <a href="ejercicios/Comportamiento/Memento.zip" download>🧠 Memento</a>
+            <a href="ejercicios/Comportamiento/Observer.zip" download>👀 Observer</a>
+            <a href="ejercicios/Comportamiento/State.zip" download>🎚️ State</a>
+            <a href="ejercicios/Comportamiento/Strategy.zip" download>♟️ Strategy</a>
+            <a href="ejercicios/Comportamiento/TemplateMethod.zip" download>📋 Template Method</a>
+            <a href="ejercicios/Comportamiento/Visitor.zip" download>🧳 Visitor</a>
         </div>
     </div>
 
     <!-- Concurrencia -->
     <div class="menu">
-        <button>Concurrencia</button>
+        <button>⚙️ Concurrencia</button>
         <div class="dropdown">
-            <a href="ejercicios/Concurrencia/GuardedSuspension.zip" download>Ejercicios Guarded Suspension</a>
-            <a href="ejercicios/Concurrencia/LockOrder.zip" download>Ejercicios Lock Order</a>
-            <a href="ejercicios/Concurrencia/SeccionCritica.zip" download>Ejercicios Sección Crítica</a>
+            <a href="ejercicios/Concurrencia/GuardedSuspension.zip" download>🛡️ Guarded Suspension</a>
+            <a href="ejercicios/Concurrencia/LockOrder.zip" download>🔐 Lock Order</a>
+            <a href="ejercicios/Concurrencia/SeccionCritica.zip" download>🚦 Sección Crítica</a>
         </div>
     </div>
 </nav>
+
+<footer>
+    Desarrollado por [Tu Nombre] – Ingeniería de Sistemas © 2025
+</footer>
 
 </body>
 </html>
