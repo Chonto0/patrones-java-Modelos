@@ -1,55 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Patrones de diseño en Java</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #000000, #001f4d);
+            color: white;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(0, 0, 64, 0.8);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .menu {
+            position: relative;
+        }
+
+        .menu button {
+            background-color: #003366;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 8px;
+            transition: background-color 0.3s;
+        }
+
+        .menu button:hover {
+            background-color: #0055cc;
+        }
+
+        .dropdown {
+            display: none;
+            position: absolute;
+            background-color: #001a33;
+            box-shadow: 0px 4px 8px rgba(0,0,0,0.4);
+            border-radius: 8px;
+            padding: 10px;
+            z-index: 1;
+            top: 100%;
+            left: 0;
+            min-width: 220px;
+        }
+
+        .menu:hover .dropdown {
+            display: block;
+        }
+
+        .dropdown a {
+            display: block;
+            color: white;
+            padding: 8px;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: background-color 0.2s;
+        }
+
+        .dropdown a:hover {
+            background-color: #004080;
+        }
+    </style>
+</head>
+<body>
+
 <header>
     <h1>Patrones de diseño en Java</h1>
 </header>
 
 <nav>
+    <!-- Creacionales -->
     <div class="menu">
         <button>Creacionales</button>
         <div class="dropdown">
-            <a href="ejercicios/Creacionales/Factory.zip">Ejercicios Factory</a>
-<a href="ejercicios/Creacionales/AbstractFactory.zip" download>Abstract Factory</a>
-
-            <a href="ejercicios/Creacionales/Builder.zip">Ejercicios Builder</a>
-            <a href="ejercicios/Creacionales/Singleton.zip">Ejercicios Singleton</a>
-            <a href="ejercicios/Creacionales/Prototype.zip">Ejercicios Prototype</a>
-
-
+            <a href="ejercicios/Creacionales/Factory.zip" download>Ejercicios Factory</a>
+            <a href="ejercicios/Creacionales/AbstractFactory.zip" download>Abstract Factory</a>
+            <a href="ejercicios/Creacionales/Builder.zip" download>Ejercicios Builder</a>
+            <a href="ejercicios/Creacionales/Singleton.zip" download>Ejercicios Singleton</a>
+            <a href="ejercicios/Creacionales/Prototype.zip" download>Ejercicios Prototype</a>
         </div>
     </div>
+
+    <!-- Estructurales -->
     <div class="menu">
         <button>Estructurales</button>
         <div class="dropdown">
-            <a href="ejercicios/Estructurales/Adapter.zip">Ejercicios Adapter</a>
-            <a href="ejercicios/Estructurales/Bridge.zip">Ejercicios Bridge</a>
-            <a href="ejercicios/Estructurales/Composite.zip">Ejercicios Composite</a>
-            <a href="ejercicios/Estructurales/Decorator.zip">Ejercicios Decorator</a>
-            <a href="ejercicios/Estructurales/Facade.zip">Ejercicios Facade</a>
-            <a href="ejercicios/Estructurales/Flyweight.zip">Ejercicios Flyweight</a>
-            <a href="ejercicios/Estructurales/Proxy.zip">Ejercicios Proxy</a>
+            <a href="ejercicios/Estructurales/Adapter.zip" download>Ejercicios Adapter</a>
+            <a href="ejercicios/Estructurales/Bridge.zip" download>Ejercicios Bridge</a>
+            <a href="ejercicios/Estructurales/Composite.zip" download>Ejercicios Composite</a>
+            <a href="ejercicios/Estructurales/Decorator.zip" download>Ejercicios Decorator</a>
+            <a href="ejercicios/Estructurales/Facade.zip" download>Ejercicios Facade</a>
+            <a href="ejercicios/Estructurales/Flyweight.zip" download>Ejercicios Flyweight</a>
+            <a href="ejercicios/Estructurales/Proxy.zip" download>Ejercicios Proxy</a>
         </div>
     </div>
+
+    <!-- Comportamiento -->
     <div class="menu">
         <button>Comportamiento</button>
         <div class="dropdown">
-            <a href="ejercicios/Comportamiento/ChainofResponsibility.zip">Ejercicios ChainofResponsibility</a>
-            <a href="ejercicios/Comportamiento/Command.zip">Ejercicios Command</a>
-            <a href="ejercicios/Comportamiento/Iterator.zip">Ejercicios Iterator</a>
-            <a href="ejercicios/Comportamiento/Mediator.zip">Ejercicios Mediator</a>
-            <a href="ejercicios/Comportamiento/Memento.zip">Ejercicios Memento</a>
-            <a href="ejercicios/Comportamiento/Observer.zip">Ejercicios Observer</a>
-            <a href="ejercicios/Comportamiento/State.zip">Ejercicios State</a>
-            <a href="ejercicios/Comportamiento/Strategy.zip">Ejercicios Strategy</a>
-            <a href="ejercicios/Comportamiento/TemplateMethod.zip">Ejercicios TemplateMethod</a>
-            <a href="ejercicios/Comportamiento/Visitor.zip">Ejercicios Visitor</a>
-
+            <a href="ejercicios/Comportamiento/ChainofResponsibility.zip" download>Ejercicios Chain of Responsibility</a>
+            <a href="ejercicios/Comportamiento/Command.zip" download>Ejercicios Command</a>
+            <a href="ejercicios/Comportamiento/Iterator.zip" download>Ejercicios Iterator</a>
+            <a href="ejercicios/Comportamiento/Mediator.zip" download>Ejercicios Mediator</a>
+            <a href="ejercicios/Comportamiento/Memento.zip" download>Ejercicios Memento</a>
+            <a href="ejercicios/Comportamiento/Observer.zip" download>Ejercicios Observer</a>
+            <a href="ejercicios/Comportamiento/State.zip" download>Ejercicios State</a>
+            <a href="ejercicios/Comportamiento/Strategy.zip" download>Ejercicios Strategy</a>
+            <a href="ejercicios/Comportamiento/TemplateMethod.zip" download>Ejercicios Template Method</a>
+            <a href="ejercicios/Comportamiento/Visitor.zip" download>Ejercicios Visitor</a>
         </div>
     </div>
+
+    <!-- Concurrencia -->
     <div class="menu">
         <button>Concurrencia</button>
         <div class="dropdown">
-            <a href="ejercicios/Concurrencia/GuardedSuspension.zip">Ejercicios GuardedSuspension</a>
-            <a href="ejercicios/Concurrencia/LockOrder.zip">Ejercicios LockOrder</a>
-            <a href="ejercicios/Concurrencia/SeccionCritica.zip">Ejercicios SeccionCritica</a>
+            <a href="ejercicios/Concurrencia/GuardedSuspension.zip" download>Ejercicios Guarded Suspension</a>
+            <a href="ejercicios/Concurrencia/LockOrder.zip" download>Ejercicios Lock Order</a>
+            <a href="ejercicios/Concurrencia/SeccionCritica.zip" download>Ejercicios Sección Crítica</a>
         </div>
     </div>
 </nav>
+
+</body>
+</html>
