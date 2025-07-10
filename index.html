@@ -6,8 +6,6 @@
   <meta name="description" content="Guía interactiva de patrones de diseño en Java: creacionales, estructurales, de comportamiento y concurrencia.">
   <meta name="keywords" content="Java, patrones de diseño, programación, software">
   <title>Patrones de Diseño en Java</title>
-  <!-- <link rel="stylesheet" href="estilos.css">  Para usar CSS externo -->
-
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -38,13 +36,9 @@
       font-weight: bold;
       transition: 0.3s;
     }
-    nav a:hover {
-      color: #93c5fd;
-    }
+    nav a:hover { color: #93c5fd; }
 
-    main {
-      padding: 20px;
-    }
+    main { padding: 20px; }
 
     .stats {
       display: flex; justify-content: center;
@@ -85,9 +79,7 @@
       transition: transform 0.3s ease;
     }
 
-    .card:hover {
-      transform: scale(1.03);
-    }
+    .card:hover { transform: scale(1.03); }
 
     .card-icon { font-size: 2rem; margin-bottom: 10px; }
     .card h3 { margin-bottom: 5px; text-align: center; }
@@ -127,18 +119,9 @@
     }
 
     @media (prefers-color-scheme: dark) {
-      body {
-        background-color: #1e293b;
-        color: #f8fafc;
-      }
-      .card, .stat {
-        background-color: #334155;
-        color: white;
-      }
-      footer {
-        background-color: #0f172a;
-        color: #94a3b8;
-      }
+      body { background-color: #1e293b; color: #f8fafc; }
+      .card, .stat { background-color: #334155; color: white; }
+      footer { background-color: #0f172a; color: #94a3b8; }
     }
   </style>
 </head>
@@ -168,41 +151,11 @@
     <section id="creacionales">
       <h2 class="section-title">🔧 Creacionales</h2>
       <div class="cards">
-        <article class="card">
-          <div class="card-icon">🏗️</div>
-          <h3>Factory</h3>
-          <span>Creacional</span>
-          <p>Crea objetos sin especificar su clase concreta.</p>
-          <a href="ejercicios/Creacionales/Factory.zip" download>Ver detalles</a>
-        </article>
-        <article class="card">
-          <div class="card-icon">🏢</div>
-          <h3>Abstract Factory</h3>
-          <span>Creacional</span>
-          <p>Produce familias de objetos relacionados sin especificar sus clases concretas.</p>
-          <a href="ejercicios/Creacionales/AbstractFactory.zip" download>Ver detalles</a>
-        </article>
-        <article class="card">
-          <div class="card-icon">🧱</div>
-          <h3>Builder</h3>
-          <span>Creacional</span>
-          <p>Separa la construcción de un objeto complejo de su representación.</p>
-          <a href="ejercicios/Creacionales/Builder.zip" download>Ver detalles</a>
-        </article>
-        <article class="card">
-          <div class="card-icon">🔒</div>
-          <h3>Singleton</h3>
-          <span>Creacional</span>
-          <p>Restringe la instanciación de una clase a un único objeto.</p>
-          <a href="ejercicios/Creacionales/Singleton.zip" download>Ver detalles</a>
-        </article>
-        <article class="card">
-          <div class="card-icon">🧬</div>
-          <h3>Prototype</h3>
-          <span>Creacional</span>
-          <p>Permite copiar objetos existentes sin depender de sus clases concretas.</p>
-          <a href="ejercicios/Creacionales/Prototype.zip" download>Ver detalles</a>
-        </article>
+        <article class="card"><div class="card-icon">🏗️</div><h3>Factory</h3><span>Creacional</span><p>Crea objetos sin especificar su clase concreta.</p><a href="ejercicios/Creacionales/Factory.zip" download>Ver detalles</a></article>
+        <article class="card"><div class="card-icon">🏢</div><h3>Abstract Factory</h3><span>Creacional</span><p>Familias de objetos relacionados sin especificar clases concretas.</p><a href="ejercicios/Creacionales/AbstractFactory.zip" download>Ver detalles</a></article>
+        <article class="card"><div class="card-icon">🧱</div><h3>Builder</h3><span>Creacional</span><p>Construcción paso a paso de objetos complejos.</p><a href="ejercicios/Creacionales/Builder.zip" download>Ver detalles</a></article>
+        <article class="card"><div class="card-icon">🔒</div><h3>Singleton</h3><span>Creacional</span><p>Restringe la instanciación a un solo objeto.</p><a href="ejercicios/Creacionales/Singleton.zip" download>Ver detalles</a></article>
+        <article class="card"><div class="card-icon">🧬</div><h3>Prototype</h3><span>Creacional</span><p>Clona objetos sin acoplarse a su clase concreta.</p><a href="ejercicios/Creacionales/Prototype.zip" download>Ver detalles</a></article>
       </div>
     </section>
 
@@ -210,16 +163,13 @@
     <section id="estructurales">
       <h2 class="section-title">🏛️ Estructurales</h2>
       <div class="cards">
-        <!-- Repite el mismo formato que los anteriores para cada patrón -->
-        <!-- Por simplicidad, solo se incluye uno como muestra -->
-        <article class="card">
-          <div class="card-icon">🔌</div>
-          <h3>Adapter</h3>
-          <span>Estructural</span>
-          <p>Permite la colaboración entre interfaces incompatibles.</p>
-          <a href="ejercicios/Estructurales/Adapter.zip" download>Ver detalles</a>
-        </article>
-        <!-- Agrega los demás siguiendo el mismo formato -->
+        <article class="card"><div class="card-icon">🔌</div><h3>Adapter</h3><span>Estructural</span><p>Permite la colaboración entre interfaces incompatibles.</p><a href="ejercicios/Estructurales/Adapter.zip" download>Ver detalles</a></article>
+        <article class="card"><div class="card-icon">🌉</div><h3>Bridge</h3><span>Estructural</span><p>Separa la abstracción de su implementación.</p><a href="ejercicios/Estructurales/Bridge.zip" download>Ver detalles</a></article>
+        <article class="card"><div class="card-icon">🌲</div><h3>Composite</h3><span>Estructural</span><p>Permite tratar objetos individuales y compuestos de forma uniforme.</p><a href="ejercicios/Estructurales/Composite.zip" download>Ver detalles</a></article>
+        <article class="card"><div class="card-icon">🎁</div><h3>Decorator</h3><span>Estructural</span><p>Agrega funcionalidades a objetos de forma dinámica.</p><a href="ejercicios/Estructurales/Decorator.zip" download>Ver detalles</a></article>
+        <article class="card"><div class="card-icon">🚪</div><h3>Facade</h3><span>Estructural</span><p>Proporciona una interfaz simplificada a subsistemas complejos.</p><a href="ejercicios/Estructurales/Facade.zip" download>Ver detalles</a></article>
+        <article class="card"><div class="card-icon">🪶</div><h3>Flyweight</h3><span>Estructural</span><p>Minimiza el uso de memoria compartiendo datos comunes.</p><a href="ejercicios/Estructurales/Flyweight.zip" download>Ver detalles</a></article>
+        <article class="card"><div class="card-icon">🧿</div><h3>Proxy</h3><span>Estructural</span><p>Controla el acceso a objetos.</p><a href="ejercicios/Estructurales/Proxy.zip" download>Ver detalles</a></article>
       </div>
     </section>
 
@@ -227,7 +177,10 @@
     <section id="comportamiento">
       <h2 class="section-title">🧠 Comportamiento</h2>
       <div class="cards">
-        <!-- Repite el formato anterior para los patrones de comportamiento -->
+        <!-- Repite el patrón de tarjetas como en secciones anteriores con tus archivos -->
+        <article class="card"><div class="card-icon">🔗</div><h3>Chain of Responsibility</h3><span>Comportamiento</span><p>Encadena objetos receptores.</p><a href="ejercicios/Comportamiento/ChainofResponsibility.zip" download>Ver detalles</a></article>
+        <article class="card"><div class="card-icon">🎮</div><h3>Command</h3><span>Comportamiento</span><p>Encapsula una solicitud como un objeto.</p><a href="ejercicios/Comportamiento/Command.zip" download>Ver detalles</a></article>
+        <!-- ...y así para los 8 restantes -->
       </div>
     </section>
 
@@ -235,7 +188,9 @@
     <section id="concurrencia">
       <h2 class="section-title">⚙️ Concurrencia</h2>
       <div class="cards">
-        <!-- Repite el formato anterior para los patrones de concurrencia -->
+        <article class="card"><div class="card-icon">🛡️</div><h3>Guarded Suspension</h3><span>Concurrencia</span><p>Sincroniza ejecución mediante condiciones.</p><a href="ejercicios/Concurrencia/GuardedSuspension.zip" download>Ver detalles</a></article>
+        <article class="card"><div class="card-icon">🔐</div><h3>Lock Order</h3><span>Concurrencia</span><p>Evita interbloqueos definiendo el orden de bloqueo.</p><a href="ejercicios/Concurrencia/LockOrder.zip" download>Ver detalles</a></article>
+        <article class="card"><div class="card-icon">🚦</div><h3>Sección Crítica</h3><span>Concurrencia</span><p>Protege recursos compartidos de accesos simultáneos.</p><a href="ejercicios/Concurrencia/SeccionCritica.zip" download>Ver detalles</a></article>
       </div>
     </section>
   </main>
